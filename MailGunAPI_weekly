@@ -1,0 +1,14 @@
+import requests
+def send_simple_message():
+    return requests.post(
+        "https://api.mailgun.net/v3/sandboxINSERT.mailgun.org/messages",
+        auth=("api", "key-INSERT"),
+        files=[("inline", open("/Users/danielle/Desktop/CFG/app/CrypticTube1"))],
+        data={"from": "Tube Quizmaster <postmaster@sandboxINSERT.mailgun.org>",
+              "to": "Person <bob@email.com>",
+              "subject": "Your weekly riddle from Tube Trivia",
+              "text": "Can you guess the station name? Email your response to be in with a chance to get on our commuter champion leaderboard at Tube Game, and win some Underground goodies!",
+              "o:deliverytime": "Mon, 3 Apr 2017 14:32:00 GMT"
+              })
+
+send_simple_message()
